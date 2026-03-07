@@ -20,10 +20,9 @@ You must set tcp address with the camera keys and menu.
 
 ## Telnet usefull comands
 
-# palette: Set/read color palette (<palette default> to reset) (opt -e -r)
+### palette: Set/read color palette (<palette default> to reset) (opt -e -r)
 
-# palette file names:
-
+ palette file names:
 - rainHC
 - rainbow
 - iron

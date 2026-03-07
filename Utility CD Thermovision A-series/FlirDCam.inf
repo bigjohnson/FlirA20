@@ -1,0 +1,132 @@
+;
+; FlirDcam.INF 
+; 
+; http://www.flir.com         
+;
+
+[Version]
+LayoutFile=Layout.inf, Layout1.inf, Layout2.inf
+signature="$CHICAGO$"
+Class=Image
+ClassGUID={6bdd1fc6-810f-11d0-bec7-08002be2092f}
+Provider=%FlirMfg%
+DriverVer=10/25/2004,5.20.2600.923
+
+[ControlFlags]
+; All PnP devices should be excluded from manual AddDevice Applet list
+ExcludeFromSelect=*
+
+[Manufacturer]
+%FlirMfg%=Flir
+
+[DestinationDirs]
+DefaultDestDir=11               ; LDID_SYS
+Flir.1394DCam.CopyDrivers=10,system32\drivers
+Flir.1394DCam.CopyCODEC=11
+
+
+;---------------------------------------------------------------
+;                F L I R . 
+;
+;                      1 3 9 4 D C a m
+;---------------------------------------------------------------
+
+[Flir]
+%1394\FLIR&X17.DeviceDesc%=Flir.1394DCam,1394\FLIR&ThermaCAM
+%1394\FLIR&X17.DeviceDesc%=Flir.1394DCam,1394\FLIR&ThermaCAM_R1
+%1394\FLIR&X17.DeviceDesc%=Flir.1394DCam,1394\FLIR&ThermaCAM_R2
+%1394\FLIR&X17.DeviceDesc%=Flir.1394DCam,1394\FLIR&ThermaCAM_R3
+
+
+
+[Flir.1394DCam]
+DriverVer=10/25/2004,5.20.2600.923
+Include=    ks.inf, kscaptur.inf, ksfilter.inf
+Needs=      KS.Registration,KSCAPTUR.Registration
+AddReg=     Flir.1394DCam.AddReg
+UpdateInis= Flir.1394DCam.UpdateIni
+DelFiles=   Flir.1394DCam.DelDrivers
+CopyFiles=  Flir.1394DCam.CopyDrivers, Flir.1394DCam.CopyCODEC
+
+
+[Flir.1394DCam.NT]
+DriverVer=10/25/2004,5.20.2600.923
+Include=    ks.inf, kscaptur.inf, ksfilter.inf
+Needs=      KS.Registration,KSCAPTUR.Registration.NT
+AddReg=     Flir.1394DCam.AddReg
+UpdateInis= Flir.1394DCam.UpdateIni
+CopyFiles=  Flir.1394DCam.CopyDrivers, Flir.1394DCam.CopyCODEC
+
+[Flir.1394DCam.AddReg]
+HKR,,DevLoader,,*ntkern
+HKR,,NTMPDriver,,flirdcam.sys
+HKR,,PageOutWhenUnopened,3,00
+HKR,,DontSuspendIfStreamsAreRunning,3,01
+HKR,,OkToHibernate,3,00
+HKR,,PowerDownWhenUnopened,3,00
+
+
+[Flir.1394DCam.UpdateIni]
+system.ini, drivers32,,"VIDC.UYVY=msyuv.dll"
+
+[Flir.1394DCam.DelDrivers]
+flirdcam.sys,,,1
+
+[Flir.1394DCam.CopyDrivers]
+stream.sys
+flirdcam.sys
+
+[Flir.1394DCam.CopyCODEC]
+msyuv.dll
+
+[Flir.1394DCam.Interfaces]
+AddInterface=%KSCATEGORY_CAPTURE%,GLOBAL,Flir.1394DCam.Interface
+AddInterface=%KSCATEGORY_VIDEO%,GLOBAL,Flir.1394DCam.Interface
+
+[Flir.1394DCam.NT.Interfaces]
+AddInterface=%KSCATEGORY_CAPTURE%,GLOBAL,Flir.1394DCam.Interface
+AddInterface=%KSCATEGORY_VIDEO%,GLOBAL,Flir.1394DCam.Interface
+
+[Flir.1394DCam.Interface]
+AddReg=Flir.1394DCam.Intf.AddReg
+
+[Flir.1394DCam.Intf.AddReg]
+HKR,,CLSID,,%ProxyVCap.CLSID%
+HKR,,FriendlyName,,%1394\FLIR&X17.DeviceDesc%
+HKR,,Description,,%1394\FLIR&X17.DeviceDesc%
+
+
+[Flir.1394DCam.NT.Services]
+AddService = FlirDcam,0x00000002,Flir.1394DCam.ServiceInstall
+
+[Flir.1394DCam.ServiceInstall]
+DisplayName   = %1394\FLIR&X17.DeviceDesc%
+ServiceType   = %SERVICE_KERNEL_DRIVER%
+StartType     = %SERVICE_DEMAND_START%
+ErrorControl  = %SERVICE_ERROR_NORMAL%
+ServiceBinary = %12%\flirdcam.sys
+
+
+
+[Strings]
+
+;----------------
+; Non-Localizable
+;----------------
+
+ProxyVCap.CLSID="{17CCA71B-ECD7-11D0-B908-00A0C9223196}"
+KSCATEGORY_CAPTURE="{65E8773D-8F56-11D0-A3B9-00A0C9223196}"
+KSCATEGORY_VIDEO="{6994AD05-93EF-11D0-A3CC-00A0C9223196}"
+
+SERVICE_KERNEL_DRIVER=1
+SERVICE_DEMAND_START=3
+SERVICE_ERROR_NORMAL=1
+
+
+;----------------
+; Localizable
+;----------------
+
+FlirMfg="FLIR"
+1394\FLIR&X17.DeviceDesc="FLIR ThermaCAM"
+

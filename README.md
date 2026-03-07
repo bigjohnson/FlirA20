@@ -1,4 +1,4 @@
-# Some Flir A20 thermocamera info
+# Some Flir A20 thermocamera ethernet info
 
 ## filesystem
 
@@ -12,6 +12,8 @@ You must set tcp address with the camera keys and menu.
 The rtp server port is selected on the menu.
 
 It use a proprietary client that start the image transmission owith some Flir socket server comamnd.
+
+I use it with an usb cvbs grabber and obs.
 
 I try to start it and recive video with ffmpeg and vlc without success.
 

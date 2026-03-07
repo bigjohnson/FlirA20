@@ -78,7 +78,9 @@ bt e for menu
 
 ## Webserver acess
 
-I used a virtualbox windows xp macjìhine with the programs on Utility CD Thermovision A-series folder.
+I used a virtualbox windows xp machine with the programs on Utility CD Thermovision A-series folder.
+
+Before internet exporer acess install j2re-1_4_1_05-windows-i586-i.exe and jmf-2_1_1e-windows-i586.exe from 
 
 The remote rtp proprietary viewer is FLIRRtpPlayer.exe, you must install j2re-1_4_1_05-windows-i586-i.exe and jmf-2_1_1e-windows-i586.exe before.
 

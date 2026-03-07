@@ -23,6 +23,7 @@ You must set tcp address with the camera keys and menu.
 - 22136 Flir socket server
 
 ## Telnet usefull comands
+on file Flir_E45_Commands.rtf there are all commands
 
 ### help show all commands
 help command to see command specific help

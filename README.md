@@ -8,6 +8,28 @@ on file A20filesystem.zip there is a full filesystem dump
 
 You must set tcp address with the camera keys and menu.
 
+## Rtp server
+The rtp server port is selected on the menu.
+
+It use a proprietary client that start the image transmission owith some Flir socket server comamnd.
+
+I try to start it and recive video with ffmpeg and vlc without success.
+
+
+The Flir socket server command that I found with wireshark and packet sender are:
+
+client -> \01.system.rtp.port\00
+
+camera <- \02\2b\48\00 with rtp port 11080
+
+client -> \01.version.product.name\00
+
+camera <- \02\04ThermoVision A20 V\00
+
+client -> \01.version.product.serial\00
+
+camera <- \02\0422700540\00
+
 # Open ports / services
 
 - 21 tcp ftp to images folder
@@ -47,3 +69,8 @@ rls -lr to see all resources in long format
 ### store: Store current image
 Usage: store [-j] [-p] [-e] [-o] <filename>
 (-j=JPEG, -p=PNG compression, -e=JPEG only, -o=Without overlay graphics)
+
+### bt: Send a button command to PEG: bt [-p <press>] [-r <release>] e
+buttons are yes no sel frz left right up down
+bt e for menu
+

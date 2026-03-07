@@ -76,3 +76,9 @@ Usage: store [-j] [-p] [-e] [-o] <filename>
 buttons are yes no sel frz left right up down
 bt e for menu
 
+## Webserver acess
+
+I used a virtualbox windows xp macjìhine with the programs on Utility CD Thermovision A-series.zip file.
+
+The remote rtp proprietary viewer is FLIRRtpPlayer.exe, you must install JRE and JMF from zib file.
+

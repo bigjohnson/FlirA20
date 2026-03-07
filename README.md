@@ -1,5 +1,9 @@
 # Some Flir A20 thermocamera info
 
+## filesystem
+
+on file A20filesystem.zip there is a full filesystem dump
+
 ## Ethernet connection
 
 You must set tcp address with the camera keys and menu.

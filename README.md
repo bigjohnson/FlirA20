@@ -77,11 +77,11 @@ buttons are yes no sel frz left right up down
 bt e for menu
 
 ## Webserver acess
+I used a virtualbox windows xp machine with the programs from Utility CD Thermovision A-series folder.
 
-I used a virtualbox windows xp machine with the programs on Utility CD Thermovision A-series folder.
+Before internet exporer acess install j2re-1_4_1_05-windows-i586-i.exe and jmf-2_1_1e-windows-i586.exe from Utility CD Thermovision A-series folder.
 
-Before internet exporer acess install j2re-1_4_1_05-windows-i586-i.exe and jmf-2_1_1e-windows-i586.exe from 
-
+## FLIRRtpPlayer
 The remote rtp proprietary viewer is FLIRRtpPlayer.exe, you must install j2re-1_4_1_05-windows-i586-i.exe and jmf-2_1_1e-windows-i586.exe before.
 
 The client has ha bug and don't start correctly the rtp camera server, to use it before connect with http vlient and start a remote camera vision with http client, then you can use Flir rtp payer, but it has some problems.

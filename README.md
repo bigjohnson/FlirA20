@@ -2,6 +2,8 @@
 
 ## Ethernet connection
 
+You must set tcp address with the camera keys and menu.
+
 # Open ports / services
 
 - 21 tcp ftp to images folder
@@ -15,3 +17,15 @@
 - 445 tcp SMB
 - 1024 tcp unknown
 - 22136 Flir socket server
+
+## Telnet usefull comands
+
+# palette: Set/read color palette (<palette default> to reset) (opt -e -r)
+
+# palette file names:
+
+- rainHC
+- rainbow
+- iron
+- bw
+- bwr

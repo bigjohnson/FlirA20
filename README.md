@@ -84,5 +84,5 @@ Before internet exporer acess install j2re-1_4_1_05-windows-i586-i.exe and jmf-2
 ## FLIRRtpPlayer
 The remote rtp proprietary viewer is FLIRRtpPlayer.exe, you must install j2re-1_4_1_05-windows-i586-i.exe and jmf-2_1_1e-windows-i586.exe before.
 
-The client has ha bug and don't start correctly the rtp camera server, to use it before connect with http vlient and start a remote camera vision with http client, then you can use Flir rtp payer, but it has some problems.
+The client has ha bug and don't start correctly the rtp camera server, to use it before connect with http client and start a remote camera vision with http client, then you can use Flir rtp payer, but it has some problems.
 
